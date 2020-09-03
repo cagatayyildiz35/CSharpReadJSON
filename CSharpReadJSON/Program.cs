@@ -1,7 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -13,19 +15,31 @@ namespace CSharpReadJSON
     {
         static void Main(string[] args)
         {
-            using (StreamReader file = File.OpenText(@"C:\Users\bilge.adam\source\repos\CSharpReadJSON\CSharpReadJSON\products.json"))
+
+
+
+            using (StreamReader file = File.OpenText(@"C:\Users\bilge.adam\source\repos\CSharpReadJSON\CSharpReadJSON\users.json"))
             {
                 using (JsonTextReader reader = new JsonTextReader(file))
                 {
                     JObject o2 = (JObject)JToken.ReadFrom(reader);
 
-                    JToken urunler = o2["urunler"];
+                    JToken kullanicilar = o2["users"];
 
-
-                    foreach (var item in urunler)
+                    List<User> csharpusers = new List<User>();
+                    foreach (var item in kullanicilar)
                     {
-                        string name = item["name"].ToString();
-                        double price = Convert.ToDouble(item["price"]);
+                        User newuser = new User();
+
+                        newuser.Name = item["name"].ToString();
+                        newuser.City = item["city"].ToString();
+                        newuser.EMail = item["email"].ToString();
+                        newuser.Phone = item["phone"].ToString();
+                        
+                        newuser.RegisterDate = DateTime.ParseExact(item["registerdate"].ToString(), "dd/mm/yy", null);
+
+                        csharpusers.Add(newuser);
+
                     }
                 }
 
