@@ -1,0 +1,36 @@
+﻿{
+  "firm": [
+    {
+      "companyname": "Bilge Adam",
+      "address": "Barbaros bulvarı",
+      "courses": [ "Yazılım", "Tasarım", "Dijital Medya" ],
+      "students": [
+        {
+          "name": "Çağatay",
+          "surname": "Yıldız"
+        },
+        {
+          "name": "Anıl",
+          "surname": "Güleroğlu"
+        }
+      ]
+    },
+    {
+      "companyname": "İTÜ",
+      "address": "Barbaros bulvarı - 2",
+      "courses": [ "Yazılım", "Tasarım" ],
+      "students": [
+        {
+          "name": "Berk",
+          "surname": "Çerlik"
+        },
+        {
+          "name": "Mustafa",
+          "surname": "Özdemir"
+        }
+      ]
+    }
+  ]
+}
+
+
