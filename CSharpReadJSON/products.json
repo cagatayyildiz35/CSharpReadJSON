@@ -1,0 +1,17 @@
+{
+  "urunler": [
+    {
+      "name": "IPhone",
+      "price": 5000
+    },
+    {
+      "name": "Samsung",
+      "price": 3000
+    },
+    {
+      "name": "Huawei",
+      "price": 655.2
+    }
+  ]
+
+}
